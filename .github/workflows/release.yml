@@ -127,9 +127,6 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
-      - name: Decode Keystore
-        run: printf '%s' "${{ secrets.KEYSTORE_BASE64 }}" | base64 --decode > app/release.keystore
-
       - name: Build Release APK
         env:
           KEYSTORE_FILE: release.keystore
